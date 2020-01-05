@@ -1,5 +1,5 @@
 #include <Reactduino.h>
-#include <Servo.h>
+// #include <Servo.h>
 
 /*
  * This example demonstates:
@@ -35,7 +35,7 @@
 /*
  * Servo related data
  */
-Servo servo ;               // the servo instance
+// Servo servo ;               // the servo instance
 bool servo_activated;       // the flag telling if it is activated or not
 
 /*
@@ -57,22 +57,22 @@ void blink() {
  * Servo motion control reaction callback
  */
 void move_servo() {
-    static uint8_t angle = 45;
-    static int8_t increment = MOVE_INCREMENT;
+    // static uint8_t angle = 45;
+    // static int8_t increment = MOVE_INCREMENT;
 
-    if (!servo_activated)
-        return;
+    // if (!servo_activated)
+    //     return;
 
-    servo.write(angle);
+    // servo.write(angle);
 
-    angle += increment;
-    if (angle > 135) {
-        angle = 135;
-        increment = -MOVE_INCREMENT;
-    } else if (angle < 45) {
-        angle = 45;
-        increment = MOVE_INCREMENT;
-    }
+    // angle += increment;
+    // if (angle > 135) {
+    //     angle = 135;
+    //     increment = -MOVE_INCREMENT;
+    // } else if (angle < 45) {
+    //     angle = 45;
+    //     increment = MOVE_INCREMENT;
+    // }
 }
 
 
@@ -90,10 +90,10 @@ void button_cb() {
         // toggle the servo state by attachong or detaching it
         if (servo_activated) {
             Serial.println("deactivating servo");
-            servo.detach();
+            // servo.detach();
         } else {
             Serial.println("activating servo");
-            servo.attach(SERVO_PIN);
+            // servo.attach(SERVO_PIN);
         }
         servo_activated = !servo_activated;
 
@@ -123,7 +123,7 @@ void app_main() {
     Serial.begin(9600);         // for debug trace
 
     // activate the servo from app start
-    servo.attach(SERVO_PIN);
+    // servo.attach(SERVO_PIN);
     servo_activated = true;
 
     /*
