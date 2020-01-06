@@ -16,10 +16,10 @@ struct Music {
     theme = t;
     length = l;
   }
-};
 
-extern Music gta;
-extern Music gf;
-extern Music hp;
+  ~Music() {
+    delete theme;
+  }
+};
 
 #endif // MUSIC_H

@@ -1,5 +1,6 @@
 #include <EEPROM.h>
 #include <Music.hpp>
+#include <tracks.hpp>
 #include <Reactduino.h>
 #include <StepperMotor.hpp>
 
